@@ -35,12 +35,14 @@ public class UserService extends AbstractService<User> {
 	@Override
 	public boolean save(User obj) {
 		try {
-			userRepo.save(obj);
-			return true;
+			if(findById(obj.getUserId()) == null){
+				userRepo.save(obj);
+				return true;
+			}
 		} catch (Exception e) {
 			LOGGER.info("Failed to save user id: " + obj.getUserId());
-			return false;
 		}
+		return false;
 	}
 
 	@Override
