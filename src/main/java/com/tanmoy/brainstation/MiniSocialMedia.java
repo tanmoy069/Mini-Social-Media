@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BrainstationApplication {
+public class MiniSocialMedia {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BrainstationApplication.class, args);
+		SpringApplication.run(MiniSocialMedia.class, args);
 	}
 
 }
