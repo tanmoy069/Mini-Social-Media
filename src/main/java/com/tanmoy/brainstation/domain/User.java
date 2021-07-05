@@ -21,6 +21,10 @@ public class User {
 	private int phone;
 	private String password;
 
+	public User() {
+		super();
+	}
+	
 	public User(String userId, String firstName, String lastName, String gender, String email, int phone,
 			String password) {
 		super();

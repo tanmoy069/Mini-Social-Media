@@ -21,6 +21,10 @@ public class Status {
 	private boolean isPublic;
 	private String statusBody;
 	private Date createdDate;
+	
+	public Status() {
+		super();
+	}
 
 	public Status(int userId, int locationId, boolean isPublic, String statusBody) {
 		super();
