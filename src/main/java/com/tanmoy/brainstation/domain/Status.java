@@ -16,7 +16,7 @@ public class Status {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int statusId;
-	private int userId;
+	private String userId;
 	private int locationId;
 	private boolean isPublic;
 	private String statusBody;
@@ -26,7 +26,7 @@ public class Status {
 		super();
 	}
 
-	public Status(int userId, int locationId, boolean isPublic, String statusBody) {
+	public Status(String userId, int locationId, boolean isPublic, String statusBody) {
 		super();
 		this.userId = userId;
 		this.locationId = locationId;
@@ -43,11 +43,11 @@ public class Status {
 		this.statusId = statusId;
 	}
 
-	public int getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 
