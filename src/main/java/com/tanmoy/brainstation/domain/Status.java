@@ -18,7 +18,7 @@ public class Status {
 	private int statusId;
 	private String userId;
 	private int locationId;
-	private boolean isPublic;
+	private int visibility;
 	private String statusBody;
 	private Date createdDate;
 	
@@ -26,11 +26,11 @@ public class Status {
 		super();
 	}
 
-	public Status(String userId, int locationId, boolean isPublic, String statusBody) {
+	public Status(String userId, int locationId, int visibility, String statusBody) {
 		super();
 		this.userId = userId;
 		this.locationId = locationId;
-		this.isPublic = isPublic;
+		this.visibility = visibility;
 		this.statusBody = statusBody;
 		this.createdDate = Calendar.getInstance().getTime();
 	}
@@ -59,12 +59,12 @@ public class Status {
 		this.locationId = locationId;
 	}
 
-	public boolean isPublic() {
-		return isPublic;
+	public int getVisibility() {
+		return visibility;
 	}
 
-	public void setPublic(boolean isPublic) {
-		this.isPublic = isPublic;
+	public void setVisibility(int visibility) {
+		this.visibility = visibility;
 	}
 
 	public String getStatusBody() {
@@ -85,8 +85,8 @@ public class Status {
 
 	@Override
 	public String toString() {
-		return "Status [statusId=" + statusId + ", userId=" + userId + ", locationId=" + locationId + ", isPublic="
-				+ isPublic + ", statusBody=" + statusBody + ", createdDate=" + createdDate + "]";
+		return "Status [statusId=" + statusId + ", userId=" + userId + ", locationId=" + locationId + ", visibility="
+				+ visibility + ", statusBody=" + statusBody + ", createdDate=" + createdDate + "]";
 	}
 
 }

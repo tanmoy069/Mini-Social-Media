@@ -10,6 +10,6 @@ public interface StatusRepository extends JpaRepository<Status, Integer>{
 	
 	Status findByStatusId(int id);
 	List<Status> findByUserId(String userId);
-	List<Status> findByIsPublic(boolean isPublic);
+	List<Status> findByVisibility(int visibility);
 	
 }
