@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
-<title>Home</title>
+<title>Profile</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -68,52 +68,16 @@ footer{
     </div>
     
     <!-- Middle Column -->
-    <div class="w3-col m7">
-      <div class="w3-row-padding">
-        <div class="w3-col m12">
-          <div class="w3-card w3-round w3-white">
-            <div class="w3-container w3-padding">
-            	<form th:action="@{/home}" th:object="${statuPostForm}" method="post">
-		      	<h6 class="w3-opacity">Share your post</h6>
-		      	<input type="text" class="w3-border w3-padding" id="statusBody" name="statusBody" value="" required>
-		      	<br><br>
-		      	<input type="radio" id="0" name="visibility" value="0" required>
-		      	<label for="0"><b>Private</b></label>
-			  	<input type="radio" id="1" name="visibility" value="1" required>
-				<label for="1"><b>Public</b></label><br><br>
-				<label for="locationId">Choose a location:</label>
-				  <select name="locationId" id="locationId" >
-				    <option th:each="loc : ${locationList}" th:value="${loc.getLocationId()}" th:text="${loc.getLocationName()}"></option>
-				  </select>
-				  <br><br>
-		      	<button type="submmit" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
-              	</form>
-            </div>
-          </div>
-        </div>
-      </div>
-      
- 
-      <table>
-      	<tbody>
-      	  <tr th:each="status : ${statusList}">
+    <div class="w3-col m7">      
+ 		<form th:action="@{/user/update/(statusId=${status.getStatusId()})}" th:object="${updateStatusForm}" method="post">
 	      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-			<span class="w3-right w3-opacity"><span th:text="${status.getCreatedDate()}"></span></span>
 			<h4><i class="fa fa-user"></i> <span th:text="${status.getUserId()}"></span></h4>
 			<hr class="w3-clear">
-			<p><span th:text="${status.getStatusBody()}"></span></p>
-			<button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-			<button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
-	      </div>
-	  </tr>
-	  <tr th:if="${statusList.size()==0}" align="center">
-		<div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-			<h5>No post available</h5>
-		</div>
-       </tr>
-	</tbody>
-      </table>
-
+			<input type="text" class="w3-border w3-padding" id="statusBody" name="statusBody" th:value="${status.getStatusBody()}"></input>
+			<br><br>
+			<button type="submit" class="w3-button w3-theme-d1 w3-margin-bottom">Update</button> 
+	      </div>	  
+ 		</form>
           
     <!-- End Middle Column -->
     </div>
