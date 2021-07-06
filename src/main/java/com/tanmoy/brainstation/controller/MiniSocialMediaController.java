@@ -15,7 +15,7 @@ import com.tanmoy.brainstation.service.UserService;
 @Controller
 public class MiniSocialMediaController {
 
-	UserService userService;
+	private UserService userService;
 
 	@Autowired
 	public MiniSocialMediaController(UserService userService) {
