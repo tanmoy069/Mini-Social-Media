@@ -37,32 +37,22 @@ public class StatusController {
 	@GetMapping(value="/home")
 	public String getHome(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(!auth.isAuthenticated()) return "Login";
 		User user = userService.findById(auth.getName());
 		model.addAttribute("locationList", locationService.findAll());
-		model.addAttribute("statusList", statusService.findAll());
+		model.addAttribute("statusList", statusService.findAllPublicStatus());
 		model.addAttribute("userDetails", user);
 		model.addAttribute("userId", user.getUserId());
 		return "Home";
 	}
-	
-	@PostMapping(value="/")
-	public String redirectSetStatus(Model model, @ModelAttribute("statuPostForm") Status status) {
-		return setStatus(model, status);
-	}
-	
 	
 	@PostMapping(value="/home")
 	public String setStatus(Model model, @ModelAttribute("statuPostForm") Status status) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if(!auth.isAuthenticated()) return "Login";
-		User user = userService.findById(auth.getName());
 		status.setUserId(auth.getName());
 		status.setCreatedDate(Calendar.getInstance().getTime());
 		statusService.save(status);
-		model.addAttribute("locationList", locationService.findAll());
-		model.addAttribute("statusList", statusService.findAll());
-		model.addAttribute("userDetails", user);
-		model.addAttribute("userId", user.getUserId());
-		return "Home";
+		return "redirect:/home";
 	}
 }
