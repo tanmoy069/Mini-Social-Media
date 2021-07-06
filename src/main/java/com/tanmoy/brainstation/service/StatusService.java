@@ -27,6 +27,14 @@ public class StatusService extends AbstractService<Status> {
 	public List<Status> findAll() {
 		return statusRepo.findAll();
 	}
+	
+	public List<Status> findByUserId(String userId){
+		return statusRepo.findByUserIdOrderByCreatedDateDesc(userId);
+	}
+	
+	public List<Status> findAllPublicStatus(){
+		return statusRepo.findByVisibilityOrderByCreatedDateDesc(1);
+	}
 
 	@Override
 	public boolean save(Status obj) {

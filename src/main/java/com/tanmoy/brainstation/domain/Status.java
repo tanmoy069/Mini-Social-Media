@@ -3,6 +3,7 @@ package com.tanmoy.brainstation.domain;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,9 +17,12 @@ public class Status {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int statusId;
+	@Column(nullable = false)
 	private String userId;
 	private int locationId;
+	@Column(nullable = false)
 	private int visibility;
+	@Column(nullable = false)
 	private String statusBody;
 	private Date createdDate;
 	

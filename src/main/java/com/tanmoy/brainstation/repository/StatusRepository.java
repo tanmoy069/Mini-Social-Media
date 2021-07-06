@@ -9,7 +9,7 @@ import com.tanmoy.brainstation.domain.Status;
 public interface StatusRepository extends JpaRepository<Status, Integer>{
 	
 	Status findByStatusId(int id);
-	List<Status> findByUserId(String userId);
-	List<Status> findByVisibility(int visibility);
+	List<Status> findByUserIdOrderByCreatedDateDesc(String userId);
+	List<Status> findByVisibilityOrderByCreatedDateDesc(int visibility);
 	
 }
