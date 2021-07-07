@@ -17,6 +17,12 @@ import com.tanmoy.brainstation.service.LocationService;
 import com.tanmoy.brainstation.service.StatusService;
 import com.tanmoy.brainstation.service.UserService;
 
+/**
+ * Use UserController to control user related API's
+ * 
+ * @author tanmoy.tushar
+ * @since 2021-07-06
+ */
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {

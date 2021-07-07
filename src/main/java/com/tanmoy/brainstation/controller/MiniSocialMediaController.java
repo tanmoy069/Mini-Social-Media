@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.tanmoy.brainstation.domain.User;
 import com.tanmoy.brainstation.service.UserService;
 
+/**
+ * Use MiniSocialMediaController to control user login and registration related
+ * API's
+ * 
+ * @author tanmoy.tushar
+ * @since 2021-07-06
+ */
 @Controller
 public class MiniSocialMediaController {
 
@@ -25,7 +32,7 @@ public class MiniSocialMediaController {
 	@GetMapping(value = "/login")
 	public String login() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if(auth.isAuthenticated()) auth.setAuthenticated(false);
+		if (auth.isAuthenticated()) auth.setAuthenticated(false);
 		return "Login";
 	}
 

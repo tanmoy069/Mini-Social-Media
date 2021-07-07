@@ -18,7 +18,7 @@ import com.tanmoy.brainstation.service.StatusService;
 import com.tanmoy.brainstation.service.UserService;
 
 /**
- * Use StatusControler to control status related API 
+ * Use StatusControler to control status related API's 
  * 
  * @author tanmoy.tushar
  * @since 2021-07-06
