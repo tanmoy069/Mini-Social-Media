@@ -70,6 +70,7 @@ public class UserController {
 		if (!auth.isAuthenticated()) return "Login";
 		Status upStatus = statusService.findById(statusId);
 		upStatus.setStatusBody(status.getStatusBody());
+		upStatus.setVisibility(status.getVisibility());
 		statusService.update(upStatus);
 		return "redirect:/user/profile";
 	}

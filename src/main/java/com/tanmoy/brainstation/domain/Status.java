@@ -86,6 +86,10 @@ public class Status {
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
+	
+	public String getPrivacy() {
+		return visibility == 1 ? "Public" : "Private";
+	}
 
 	@Override
 	public String toString() {

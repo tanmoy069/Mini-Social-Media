@@ -75,6 +75,18 @@ footer{
 			<hr class="w3-clear">
 			<input type="text" class="w3-border w3-padding" id="statusBody" name="statusBody" th:value="${status.getStatusBody()}" required></input>
 			<br><br>
+			<div th:if="${status.getVisibility()}==1">
+				<input type="radio" id="0" name="visibility" value="0" required>
+			    <label for="0"><b>Private</b></label>
+				<input type="radio" id="1" name="visibility" value="1" required checked>
+				<label for="1"><b>Public</b></label><br><br>
+			</div>
+			<div th:if="${status.getVisibility()}==0">
+				<input type="radio" id="0" name="visibility" value="0" required checked>
+			    <label for="0"><b>Private</b></label>
+				<input type="radio" id="1" name="visibility" value="1" required>
+				<label for="1"><b>Public</b></label><br><br>
+			</div>
 			<button type="submit" class="w3-button w3-theme-d1 w3-margin-bottom">Update</button> 
 	      </div>	  
  		</form>
