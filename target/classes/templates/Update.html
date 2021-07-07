@@ -73,7 +73,7 @@ footer{
 	      <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
 			<h4><i class="fa fa-user"></i> <span th:text="${status.getUserId()}"></span></h4>
 			<hr class="w3-clear">
-			<input type="text" class="w3-border w3-padding" id="statusBody" name="statusBody" th:value="${status.getStatusBody()}"></input>
+			<input type="text" class="w3-border w3-padding" id="statusBody" name="statusBody" th:value="${status.getStatusBody()}" required></input>
 			<br><br>
 			<button type="submit" class="w3-button w3-theme-d1 w3-margin-bottom">Update</button> 
 	      </div>	  
