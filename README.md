@@ -11,6 +11,9 @@
 ##### 7. Run the project as Spring Boot App
 ##### 8. Every table will be created automatically.
 ##### 9. Please add some locations in 'Location' table.
+##### 10. Set foreign key by using given query given below, 
+###### ALTER TABLE `status` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`);
+###### ALTER TABLE `status` ADD FOREIGN KEY (`location_id`) REFERENCES `location`(`location_id`);
 
 ### Tables
 
