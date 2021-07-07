@@ -2,6 +2,7 @@ package com.tanmoy.brainstation.controller;
 
 import java.util.Calendar;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -16,6 +17,12 @@ import com.tanmoy.brainstation.service.LocationService;
 import com.tanmoy.brainstation.service.StatusService;
 import com.tanmoy.brainstation.service.UserService;
 
+/**
+ * Use StatusControler to control status related API 
+ * 
+ * @author tanmoy.tushar
+ * @since 2021-07-06
+ */
 @Controller
 public class StatusController {
 
@@ -23,6 +30,7 @@ public class StatusController {
 	private StatusService statusService;
 	private LocationService locationService;
 	
+	@Autowired
 	public StatusController(UserService userService, StatusService statusService, LocationService locationService) {
 		this.userService = userService;
 		this.statusService = statusService;
